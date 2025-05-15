@@ -1,21 +1,17 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.eeerminnn.newsappforermin"
+    namespace = "com.eeerminnn.news.main"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.eeerminnn.newsappforermin"
         minSdk = 27
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
     buildFeatures {
         compose = true
     }
@@ -41,7 +41,6 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -51,4 +50,11 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.viewmodel.compose)
+
+    implementation(project(":news-data"))
+
 }
