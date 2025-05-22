@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.kapt)
+
 }
 
 android {
@@ -56,5 +59,10 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.compose)
 
     implementation(project(":news-data"))
+
+    implementation(libs.lifecycle.viewmodel.compose)
+
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
 
 }
