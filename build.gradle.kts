@@ -10,3 +10,10 @@ plugins {
     alias(libs.plugins.dagger.hilt.android) apply false
     alias(libs.plugins.kapt) apply false
 }
+
+subprojects {
+    configurations.all {
+        // убираем старые com.intellij:annotations из всех модулей
+        exclude(group = "com.intellij", module = "annotations")
+    }
+}

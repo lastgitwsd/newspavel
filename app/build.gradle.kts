@@ -17,8 +17,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        buildConfigField("String", "NEWS_API_KEY", "\"\"")
-        buildConfigField("String", "NEWS_API_BASE_URL", "\"\"")
+        buildConfigField("String", "NEWS_API_KEY", "\"878cf5f2dece48bbad9bde2aa827b38e\"")
+        buildConfigField("String", "NEWS_API_BASE_URL", "\"https://newsapi.org/v2/\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -66,4 +66,6 @@ dependencies {
     implementation(project(":news-data"))
     implementation(project(":newsapi"))
     implementation(project(":database"))
+    implementation(project(":news-common"))
+    implementation(project(":features:news-main"))
 }

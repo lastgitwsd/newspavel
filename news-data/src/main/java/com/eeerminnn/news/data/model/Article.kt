@@ -4,7 +4,7 @@ import java.util.Date
 
 
 data class Article(
-    val uid: Long,
+    val cacheId: Long,
     val source: Source,
     val author: String,
     val title: String,

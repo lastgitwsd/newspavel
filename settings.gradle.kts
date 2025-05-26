@@ -10,6 +10,8 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+
+
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -17,7 +19,10 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+
 }
+
+
 
 rootProject.name = "NewsAppForErmin"
 include(":app")
@@ -25,3 +30,4 @@ include(":newsapi")
 include(":database")
 include(":features:news-main")
 include(":news-data")
+include(":news-common")

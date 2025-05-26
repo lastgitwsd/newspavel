@@ -12,11 +12,14 @@ kotlin {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
-dependencies{
-    implementation(libs.retrofit)
+dependencies {
+    api(libs.retrofit)
+    api(libs.kotlinx.serialization.json)
+    api(libs.retrofitSerializationConverter)
+    api(libs.retrofit.adapters)
     implementation(libs.kotlin.corutines.core)
-    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.annotation)
-    implementation(libs.retrofitSerializationConverter)
-    implementation(libs.retrofit.adapters)
+
+
+
 }

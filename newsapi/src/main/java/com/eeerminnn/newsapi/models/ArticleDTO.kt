@@ -1,20 +1,25 @@
 package com.eeerminnn.newsapi.models
 
 import com.eeerminnn.newsapi.utils.DateTimeUTCSerializer
-import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.util.Date
 
 
 @Serializable
 data class ArticleDTO(
-    @SerialName("source") val source: List<SourceDTO>,
-    @SerialName("author") val author: String,
-    @SerialName("title") val title: String,
-    @SerialName("description") val description: String,
-    @SerialName("url") val url: String,
-    @SerialName("urlToImage") val urlToImage: String,
-    @SerialName("publishedAt")
-    @Serializable(with = DateTimeUTCSerializer::class) val publishedAt: Date,
-    @SerialName("content") val content: String,
+    val source: SourceDTO,                   // ← объект, а не список
+    val author: String? = null,              // многие поля могут быть null
+    val title: String,
+    val description: String? = null,
+    val url: String,
+    val urlToImage: String? = null,
+    @Serializable(with = DateTimeUTCSerializer::class)
+    val publishedAt: Date,
+    val content: String? = null
+)
+
+@Serializable
+data class SourceDTO(
+    val id: String? = null,
+    val name: String
 )

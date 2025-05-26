@@ -2,6 +2,9 @@ package com.eeerminnn.newsappforermin
 
 
 import android.content.Context
+import com.eeerminnn.common.AndroidLogcatLogger
+import com.eeerminnn.common.AppDispatchers
+import com.eeerminnn.common.Logger
 import com.eeerminnn.database.news.NewsDatabase
 import com.eeerminnn.newsapi.NewsApi
 import dagger.Module
@@ -32,5 +35,11 @@ object AppModule {
         return NewsDatabase(context)
     }
 
+    @Provides
+    @Singleton
+    fun provideCoroutineDispatchers(): AppDispatchers = AppDispatchers()
+
+    @Provides
+    fun provideLogger(): Logger = AndroidLogcatLogger()
 
 }

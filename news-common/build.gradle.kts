@@ -1,29 +1,18 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.eeerminnn.database.news"
+    namespace = "com.eeerminnn.news.common"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 27
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -36,7 +25,5 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.room.runtime)
-    ksp(libs.room.compiler)
-
+    implementation(libs.kotlin.corutines.core)
 }
